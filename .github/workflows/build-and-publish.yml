@@ -1,7 +1,12 @@
-name: Build Workflow
-on: [workflow_dispatch, push, pull_request]
+name: Build and Publish
+on:
+  push:
+    branches:
+      - main
+permissions:
+  contents: write
 jobs:
-  build:
+  build-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Getting the latest code
@@ -14,3 +19,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages
+          folder: dist
+          clean: true
