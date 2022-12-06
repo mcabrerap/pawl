@@ -1,0 +1,82 @@
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("../../../../assets/images/sala-limpia.jpg");
+  min-height: 400px;
+}
+
+
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+//Responsive Column Cards
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+  margin: 0 -5px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+p {
+  height: 90%;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  background-color: #f1f1f1;
+  height: 230px;
+}
+
+
+.card:hover {
+  background: #f1f1f193;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #333,
+    0 0 25px #333,
+    0 0 50px #333,
+    0 0 100px #333;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1)
+}
